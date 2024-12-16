@@ -1,6 +1,7 @@
 package main
 
 import (
+	"capstan/globals"
 	"capstan/structs"
 	"fmt"
 	"net"
@@ -14,7 +15,7 @@ func HandleIRC(osuconn structs.OsuIrcClient) {
 }
 
 func main() {
-	fmt.Println("Hello World")
+	globals.InitRedisSession()
 
 	l, err := net.Listen("tcp", "127.0.0.1:6667")
 	if err != nil {
