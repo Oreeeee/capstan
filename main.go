@@ -17,13 +17,13 @@ func HandleIRC(osuconn structs.OsuIrcClient) {
 func main() {
 	globals.InitRedisSession()
 
-	l, err := net.Listen("tcp", "127.0.0.1:6667")
+	l, err := net.Listen("tcp", "0.0.0.0:6667")
 	if err != nil {
 		panic(err)
 	}
 	defer l.Close()
 
-	fmt.Println("Listening on 127.0.0.1:6667")
+	fmt.Println("Listening on 0.0.0.0:6667")
 
 	for {
 		conn, err := l.Accept()
